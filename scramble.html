@@ -24,14 +24,24 @@
             // Grab the corresponding scrambled word from the SCRAMBLED array
             var scrambledWord = SCRAMBLED[index]
             // prompt the user to guess the original word when given the scrambled word
+            alert(scrambledWord);
+            var guess = prompt("Guess what the scrambled word is:");
 
             // If the user guesses wrong, tell them they were wrong and the right word.
+            if (guess === correctWord) {
+                alert("ZOMG! You are the smartest person to ever play this game. You win one million.");
+            } else {
+                alert("That was pathetic. Please try again.");
+                guess = prompt("Guess again:");
+
+            }
             
             // If the user guesses the correct word, congratulate them.
 
             playing = confirm("Press OK To keep playing or Cancel to quit");
 
             // What does confirm() return?
+            // OK keeps playing === true, but Cancel would === false
             // What does setting the playing variable do?
         }
 
@@ -41,5 +51,3 @@
 </body>
 </html>
 
-
-var item = items[Math.floor(Math.random()*items.length)]
