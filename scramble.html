@@ -12,17 +12,24 @@
 
         var playing = true;
 
-        while (playing) {
+        function randomWord(array1) {
+            return Math.floor(Math.random() * array1.length)
+        }
 
+
+        while (playing) {
+            var index = randomWord(WORDS);
+            console.log(index);
             // Grab a random word from the WORDS array
-            var index = Math.floor(Math.random()*WORDS.length);
+            //var index = Math.floor(Math.random()*WORDS.length);
             // this pulls out the index of the random word
-            var correctWord = WORDS[index]
+            var correctWord = WORDS[index];
                 // For our purposes:
-                // console.log(index, correctWord); - removed this so that smart nerds can't cheat by looking at console for the word!
+                 console.log(index, correctWord);  
+                 //removed this so that smart nerds can't cheat by looking at console for the word!
 
             // Grab the corresponding scrambled word from the SCRAMBLED array using the randomly selected index number
-            var scrambledWord = SCRAMBLED[index]
+            var scrambledWord = SCRAMBLED[index];
 
             // prompt the user to guess the original word when given the scrambled word
             // alert(scrambledWord); Actually - can just put this work in the prompt !
