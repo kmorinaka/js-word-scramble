@@ -19,30 +19,35 @@
             // this pulls out the index of the random word
             var correctWord = WORDS[index]
                 // For our purposes:
-                console.log(index, correctWord);
+                // console.log(index, correctWord); - removed this so that smart nerds can't cheat by looking at console for the word!
 
-            // Grab the corresponding scrambled word from the SCRAMBLED array
+            // Grab the corresponding scrambled word from the SCRAMBLED array using the randomly selected index number
             var scrambledWord = SCRAMBLED[index]
+
             // prompt the user to guess the original word when given the scrambled word
-            alert(scrambledWord);
-            var guess = prompt("Guess what the scrambled word is:");
+            // alert(scrambledWord); Actually - can just put this work in the prompt !
+            var guess = prompt("Scrambled word: " + scrambledWord + "\nGuess what the scrambled word is:" );
+            //check it out! the new line character works
 
             // If the user guesses wrong, tell them they were wrong and the right word.
-            if (guess === correctWord) {
+            // If the user guesses the correct word, congratulate them.
+            // I put the "if correct" statement first because that means less typing, less comparisons to make! Don't need to do guess !== correctWord.
+            if (guess === correctWord) {   
+                // using === to compare word to correctWord
                 alert("ZOMG! You are the smartest person to ever play this game. You win one million.");
+
             } else {
-                alert("That was pathetic. Please try again.");
-                guess = prompt("Guess again:");
+                alert("That was pathetic. The correct word was: " + correctWord);
 
             }
             
-            // If the user guesses the correct word, congratulate them.
+
 
             playing = confirm("Press OK To keep playing or Cancel to quit");
-
-            // What does confirm() return?
-            // OK keeps playing === true, but Cancel would === false
-            // What does setting the playing variable do?
+            // console.log(confirm) returns: function confirm() { [native code] }
+            // What does confirm() return? 
+            // I think: OK keeps playing === true, but Cancel would === false
+            // What does setting the playing variable do? It determines whether we continue going through the game loop.
         }
 
         alert("goodbye!");
